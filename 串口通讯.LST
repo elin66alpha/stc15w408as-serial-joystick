@@ -1,0 +1,48 @@
+C51 COMPILER V9.60.0.0   ________                                                          12/22/2020 20:09:07 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ________
+OBJECT MODULE PLACED IN 串口通讯.OBJ
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 串口通讯.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND TABS(2)
+
+line level    source
+
+   1          #include "ad.H"
+   2          
+   3          sbit LED=P2^6;
+   4          sbit button=P2^5;
+   5          sbit joysw=P2^4;
+   6          
+   7          void main ()
+   8          {
+   9   1       LED=0;
+  10   1        UartInit();
+  11   1        InitADC();   
+  12   1      while(1){  
+  13   2          if(button==1)
+  14   2          {LED=1;
+  15   3            Delay100ms();
+  16   3            ShowResult(0x00); 
+  17   3          Delay100ms();
+  18   3           ShowResult(0x01); 
+  19   3            }
+  20   2          else LED=0;  
+  21   2      
+  22   2        }
+  23   1      
+  24   1      }
+  25          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    157    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
